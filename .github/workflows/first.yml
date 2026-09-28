@@ -33,3 +33,16 @@ jobs:
 
       - name: Make React build
         run: npm run build
+  
+  deploy-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel
+
+      - name: Deploy to Vercel
+        run: vercel --prod --yes --token="${{secrets.VERCEL_TOKEN}}"
