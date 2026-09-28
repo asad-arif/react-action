@@ -28,5 +28,8 @@ jobs:
       - name: run ESlint in app
         run: npm run lint
 
+      - name: run test cases
+        run: npm run test
+
       - name: Make React build
         run: npm run build
