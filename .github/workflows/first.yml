@@ -1,6 +1,9 @@
 name: "first workflow"
-on: push
-jobs:
+on: 
+push:
+  pull_request:
+
+  jobs:
     first-job:
         runs-on: ubuntu-latest
         steps:
